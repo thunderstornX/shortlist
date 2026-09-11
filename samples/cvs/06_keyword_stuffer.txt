@@ -1,0 +1,15 @@
+ALEX WINTERS
+Developer | Remote | a.winters@example.com
+
+SKILLS
+Python, REST API, REST APIs, RESTful, SQL, PostgreSQL, MySQL, Git, GitHub, GitLab,
+Docker, Kubernetes, AWS, GCP, Azure, pytest, unittest, CI/CD, Agile, Scrum, microservices,
+logistics, freight, supply chain, backend, API design, relational databases, code review.
+
+EXPERIENCE
+Freelance Developer. 2024 to present. Various projects.
+
+Assistant, family business. 2021 to 2024.
+
+EDUCATION
+Online certificates in Python and web development.

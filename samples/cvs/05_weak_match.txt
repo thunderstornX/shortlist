@@ -1,0 +1,13 @@
+TOM BRIDGES
+Graduate | Salford | t.bridges@example.com
+
+EXPERIENCE
+Retail Assistant, Currys, Salford. 2023 to present. Customer service on the shop floor.
+
+EDUCATION
+BSc Business Information Systems, University of Salford, 2023.
+Final year module in database design covering SQL basics.
+
+SKILLS
+Microsoft Excel, SQL basics, HTML, customer service, teamwork.
+Interested in moving into software development.

@@ -1,0 +1,17 @@
+HELEN MARSDEN
+Career changer | Stockport | h.marsden@example.com
+
+SUMMARY
+Fifteen years in freight forwarding operations, retrained as a developer in 2025.
+
+EXPERIENCE
+Operations Manager, Pennine Freight Forwarding. 2010 to 2025.
+Ran a team of twelve handling customs clearance and consignment tracking for
+European road freight. Deep knowledge of how logistics systems fail in practice.
+
+Bootcamp graduate, Northcoders, 2025.
+Twelve week intensive. Final project was a REST API built in Python with Flask
+and a PostgreSQL backend, developed collaboratively using Git and pull requests.
+
+SKILLS
+Python (Flask), SQL, Git, JavaScript basics. Extensive freight and customs domain knowledge.

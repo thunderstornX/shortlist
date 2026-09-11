@@ -1,0 +1,17 @@
+DANIEL OKAFOR
+Software Engineer | Manchester | d.okafor@example.com
+
+EXPERIENCE
+Software Engineer, Harbour Analytics, Manchester. 2024 to present.
+Python development on a data processing pipeline. Most of my work is batch ETL
+rather than services. I use Git daily and all changes go through review.
+
+Data Assistant, Manchester City Council. 2023 to 2024.
+Wrote SQL queries against the council's Oracle database to produce statutory
+returns. Some Python scripting to automate the monthly extracts.
+
+EDUCATION
+BSc Mathematics, University of Manchester, 2023.
+
+SKILLS
+Python, pandas, SQL, Git, Excel.

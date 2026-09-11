@@ -1,0 +1,22 @@
+N   A   D   I   A     K   H   A   N
+==========================================
+| ROLE          | Backend Engineer        |
+| LOCATION      | Oldham                  |
+| EMAIL         | n.khan@example.com      |
+==========================================
+
+>>> EXPERIENCE <<<
+
+   [ 2022 - NOW ]  BACKEND ENGINEER . . . . . Vantage Rail Ltd
+        *  Built REST APIs in Python (Django) for the rail
+           freight scheduling platform
+        *  Wrote and tuned SQL against a MySQL database of
+           1.2 billion rows
+        *  Git / pull request workflow across a team of eight
+
+   [ 2020 - 2022 ] SOFTWARE DEVELOPER . . . . Copley Systems
+        *  Python. Docker. Some AWS Lambda.
+        *  Automated tests using pytest
+
+>>> EDUCATION <<<
+   BSc Computing, Manchester Metropolitan University, 2020

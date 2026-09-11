@@ -1,0 +1,115 @@
+{
+  "arm": "plain chatbot use",
+  "model": "openai/gpt-oss-20b",
+  "provider": "groq",
+  "candidates": [
+    {
+      "candidate": "B1",
+      "latency_s": 1.46,
+      "tokens": 1379,
+      "quotes_offered": 6,
+      "quotes_grounded": 6,
+      "quotes_ungrounded": 0,
+      "quotes_altered": 0,
+      "quotes_absent": 0,
+      "quotes_too_short_to_check": 0,
+      "altered_examples": [],
+      "absent_examples": [],
+      "raw_output_chars": 1556
+    },
+    {
+      "candidate": "B2",
+      "latency_s": 1.42,
+      "tokens": 1227,
+      "quotes_offered": 7,
+      "quotes_grounded": 7,
+      "quotes_ungrounded": 0,
+      "quotes_altered": 0,
+      "quotes_absent": 0,
+      "quotes_too_short_to_check": 0,
+      "altered_examples": [],
+      "absent_examples": [],
+      "raw_output_chars": 1362
+    },
+    {
+      "candidate": "B3",
+      "latency_s": 1.57,
+      "tokens": 1266,
+      "quotes_offered": 3,
+      "quotes_grounded": 3,
+      "quotes_ungrounded": 0,
+      "quotes_altered": 0,
+      "quotes_absent": 0,
+      "quotes_too_short_to_check": 0,
+      "altered_examples": [],
+      "absent_examples": [],
+      "raw_output_chars": 1190
+    },
+    {
+      "candidate": "B4",
+      "latency_s": 2.04,
+      "tokens": 1832,
+      "quotes_offered": 11,
+      "quotes_grounded": 10,
+      "quotes_ungrounded": 1,
+      "quotes_altered": 0,
+      "quotes_absent": 1,
+      "quotes_too_short_to_check": 0,
+      "altered_examples": [],
+      "absent_examples": [
+        {
+          "quote": "Backend Engineer, Halton Logistics Software, 2022 to present. Python and FastAPI",
+          "best_match": 0.5625
+        }
+      ],
+      "raw_output_chars": 1621
+    },
+    {
+      "candidate": "B5",
+      "latency_s": 1.31,
+      "tokens": 1194,
+      "quotes_offered": 3,
+      "quotes_grounded": 3,
+      "quotes_ungrounded": 0,
+      "quotes_altered": 0,
+      "quotes_absent": 0,
+      "quotes_too_short_to_check": 0,
+      "altered_examples": [],
+      "absent_examples": [],
+      "raw_output_chars": 1228
+    },
+    {
+      "candidate": "B6",
+      "latency_s": 2.37,
+      "tokens": 1401,
+      "quotes_offered": 8,
+      "quotes_grounded": 7,
+      "quotes_ungrounded": 1,
+      "quotes_altered": 0,
+      "quotes_absent": 1,
+      "quotes_too_short_to_check": 0,
+      "altered_examples": [],
+      "absent_examples": [
+        {
+          "quote": "Senior Developer, Pendle Freight Technologies - consignment tracking platform",
+          "best_match": 0.5844
+        }
+      ],
+      "raw_output_chars": 1679
+    }
+  ],
+  "summary": {
+    "n": 6,
+    "latency_median_s": 1.51,
+    "latency_total_s": 10.2,
+    "tokens_median": 1322,
+    "tokens_total": 8299,
+    "quotes_offered": 38,
+    "quotes_grounded": 36,
+    "quotes_altered": 0,
+    "quotes_absent": 2,
+    "quotes_too_short_to_check": 0,
+    "quotes_ungrounded": 2,
+    "grounding_rate": 0.9474
+  }
+}

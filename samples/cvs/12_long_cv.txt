@@ -1,0 +1,71 @@
+GEORGE ATHERTON
+Senior Software Engineer | Manchester | g.atherton@example.com
+
+PROFESSIONAL SUMMARY
+Eight years of backend engineering across logistics, fintech and public sector.
+
+ROLE 1, Company Number 1, Manchester. 2011 to 2012.
+Backend engineering in Python. Built and maintained REST API endpoints for the
+consignment booking service. Wrote SQL queries and schema migrations against
+PostgreSQL. Collaborated through Git with pull request review on every change.
+Additional duties included on-call rotation, mentoring one junior developer,
+writing runbooks, attending sprint ceremonies, and liaising with the operations
+team about freight scheduling edge cases and customs documentation handling.
+
+ROLE 2, Company Number 2, Manchester. 2012 to 2013.
+Backend engineering in Python. Built and maintained REST API endpoints for the
+consignment booking service. Wrote SQL queries and schema migrations against
+PostgreSQL. Collaborated through Git with pull request review on every change.
+Additional duties included on-call rotation, mentoring one junior developer,
+writing runbooks, attending sprint ceremonies, and liaising with the operations
+team about freight scheduling edge cases and customs documentation handling.
+
+ROLE 3, Company Number 3, Manchester. 2013 to 2014.
+Backend engineering in Python. Built and maintained REST API endpoints for the
+consignment booking service. Wrote SQL queries and schema migrations against
+PostgreSQL. Collaborated through Git with pull request review on every change.
+Additional duties included on-call rotation, mentoring one junior developer,
+writing runbooks, attending sprint ceremonies, and liaising with the operations
+team about freight scheduling edge cases and customs documentation handling.
+
+ROLE 4, Company Number 4, Manchester. 2014 to 2015.
+Backend engineering in Python. Built and maintained REST API endpoints for the
+consignment booking service. Wrote SQL queries and schema migrations against
+PostgreSQL. Collaborated through Git with pull request review on every change.
+Additional duties included on-call rotation, mentoring one junior developer,
+writing runbooks, attending sprint ceremonies, and liaising with the operations
+team about freight scheduling edge cases and customs documentation handling.
+
+ROLE 5, Company Number 5, Manchester. 2015 to 2016.
+Backend engineering in Python. Built and maintained REST API endpoints for the
+consignment booking service. Wrote SQL queries and schema migrations against
+PostgreSQL. Collaborated through Git with pull request review on every change.
+Additional duties included on-call rotation, mentoring one junior developer,
+writing runbooks, attending sprint ceremonies, and liaising with the operations
+team about freight scheduling edge cases and customs documentation handling.
+
+ROLE 6, Company Number 6, Manchester. 2016 to 2017.
+Backend engineering in Python. Built and maintained REST API endpoints for the
+consignment booking service. Wrote SQL queries and schema migrations against
+PostgreSQL. Collaborated through Git with pull request review on every change.
+Additional duties included on-call rotation, mentoring one junior developer,
+writing runbooks, attending sprint ceremonies, and liaising with the operations
+team about freight scheduling edge cases and customs documentation handling.
+
+ROLE 7, Company Number 7, Manchester. 2017 to 2018.
+Backend engineering in Python. Built and maintained REST API endpoints for the
+consignment booking service. Wrote SQL queries and schema migrations against
+PostgreSQL. Collaborated through Git with pull request review on every change.
+Additional duties included on-call rotation, mentoring one junior developer,
+writing runbooks, attending sprint ceremonies, and liaising with the operations
+team about freight scheduling edge cases and customs documentation handling.
+
+ROLE 8, Company Number 8, Manchester. 2018 to 2019.
+Backend engineering in Python. Built and maintained REST API endpoints for the
+consignment booking service. Wrote SQL queries and schema migrations against
+PostgreSQL. Collaborated through Git with pull request review on every change.
+Additional duties included on-call rotation, mentoring one junior developer,
+writing runbooks, attending sprint ceremonies, and liaising with the operations
+team about freight scheduling edge cases and customs documentation handling.
+
+SKILLS: Python, REST, SQL, PostgreSQL, Git, Docker, AWS, pytest, logistics.

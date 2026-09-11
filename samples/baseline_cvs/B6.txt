@@ -1,0 +1,19 @@
+GRAHAM TETLOW
+Senior Developer | Bury | g.tetlow@example.com
+
+EXPERIENCE
+Senior Developer, Pendle Freight Technologies, Bury. 2016 to present.
+Nine years on the consignment tracking platform. Python throughout. I designed and
+built the public REST API that carrier partners integrate against, now serving
+sixty integrations. Owned the Oracle then PostgreSQL data layer including the SQL
+tuning work when we migrated. Introduced pull request review to the team in 2018
+and have run it since.
+
+Developer, Bolton Insurance Systems. 2013 to 2016.
+Java and some Python. Relational database work in Oracle.
+
+EDUCATION
+BSc Computing, University of Salford, 2013.
+
+SKILLS
+Python, REST, PostgreSQL, Oracle, SQL, Git, Docker, Jenkins, freight and customs systems.

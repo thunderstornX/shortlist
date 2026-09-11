@@ -1,0 +1,19 @@
+MARCUS DELACROIX
+Principal Engineer | Manchester | m.delacroix@example.com
+
+EXPERIENCE
+Principal Engineer, Tessellate Cloud. 2019 to present.
+Technical lead for a platform team of thirty. Architected the multi-region REST API
+gateway handling 40,000 requests per second. Python and Go. Owned the Postgres and
+Redis data layer including query optimisation and SQL performance work. Introduced
+the organisation's code review standards on Git.
+
+Senior Developer, Bramhall Systems. 2014 to 2019.
+Python services, Docker containerisation, AWS ECS deployments, extensive pytest
+and integration test coverage.
+
+EDUCATION
+MEng Software Engineering, Imperial College London, 2014.
+
+SKILLS
+Python, Go, REST, PostgreSQL, SQL, Git, Docker, Kubernetes, AWS, GCP, pytest.

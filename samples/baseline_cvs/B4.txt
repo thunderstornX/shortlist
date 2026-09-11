@@ -1,0 +1,21 @@
+VIKTOR PETROV
+Backend Engineer | Warrington | v.petrov@example.com
+
+PROFILE
+Six years backend. Currently working on freight consolidation software.
+
+EXPERIENCE
+Backend Engineer, Halton Logistics Software, Warrington. 2022 to present.
+Python and FastAPI. Designed the REST API for the pallet consolidation engine used
+by three UK carriers. Wrote the SQL and the schema for the consignment tables in
+MySQL. Code review on every merge, team of seven. Docker for all environments,
+deployed on Azure. pytest coverage above eighty percent.
+
+Developer, Tallinn Software OU, Estonia. 2020 to 2022.
+Python microservices. REST APIs. PostgreSQL.
+
+EDUCATION
+BSc Informatics, Tallinn University of Technology, 2020.
+
+SKILLS
+Python, FastAPI, REST, MySQL, PostgreSQL, SQL, Git, Docker, Azure, pytest, freight domain.

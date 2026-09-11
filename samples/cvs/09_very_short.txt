@@ -1,0 +1,6 @@
+RAY COLLINS
+Developer, Wigan. r.collins@example.com
+Three years of Python work at a small agency, mostly building internal REST APIs
+backed by MySQL. Comfortable with Git and team code review. Looking for a role
+with more ownership. Available immediately. References on request. Also familiar
+with Docker for local development environments and basic AWS EC2 administration.

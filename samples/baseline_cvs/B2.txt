@@ -1,0 +1,16 @@
+OMAR SIDDIQUI
+Data Engineer | Birmingham | o.siddiqui@example.com
+
+EXPERIENCE
+Data Engineer, Cadence Retail Group, Birmingham. 2021 to present.
+Five years building batch pipelines in Python and Spark. Heavy SQL against Snowflake
+and Postgres. Containerised every pipeline with Docker and deployed to AWS ECS.
+Team of nine, everything reviewed in Git before merge.
+
+I have not built customer-facing web services; my work is entirely data platform.
+
+EDUCATION
+MSc Data Science, University of Birmingham, 2021.
+
+SKILLS
+Python, PySpark, SQL, Snowflake, PostgreSQL, Docker, AWS, Git, Airflow.

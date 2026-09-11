@@ -1,0 +1,22 @@
+PRIYA RAMANATHAN
+Backend Developer | Leeds | priya.r@example.com
+
+SUMMARY
+Backend developer with four years building and running Python services in production.
+
+EXPERIENCE
+Backend Developer, Kestrel Freight Systems, Leeds. 2023 to present.
+Built and maintained REST APIs in Python using FastAPI, serving the shipment
+tracking product used by 400 carrier accounts. Designed the PostgreSQL schema for
+the consignment service and wrote the SQL migrations for it. Worked in a team of
+five using Git with mandatory pull request review before merge.
+
+Junior Developer, Ashgrove Software, Leeds. 2022 to 2023.
+Python work on internal reporting tools. Wrote pytest suites covering the billing
+calculations. Containerised the reporting service with Docker for local development.
+
+EDUCATION
+BSc Computer Science, University of Leeds, 2022.
+
+SKILLS
+Python, FastAPI, PostgreSQL, SQL, Git, Docker, pytest, Linux.

@@ -1,0 +1,14 @@
+.env
+config/config.yaml
+logs/
+out/
+__pycache__/
+*.pyc
+.venv/
+
+# Evaluation output is generated. The three runs the documentation cites are kept
+# as evidence; everything else is reproducible with the runners in eval/.
+eval/results/*
+!eval/results/eval-20260908-165453.json
+!eval/results/baseline-plain-llm-20260911-174019.json
+!eval/results/baseline-plain-llm-20260911-174126.json

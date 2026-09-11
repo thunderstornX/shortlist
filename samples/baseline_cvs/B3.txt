@@ -1,0 +1,16 @@
+CLAIRE DUNWOODY
+Junior Developer | Chester | c.dunwoody@example.com
+
+EXPERIENCE
+Junior Developer, Marlowe Digital, Chester. March 2025 to present.
+Ten months of Python work maintaining a Django site. Small feature tickets, some
+bug fixes. Use Git, though I am usually the only person on the repo.
+
+Teaching Assistant, Chester High School. 2021 to 2025.
+
+EDUCATION
+BSc Computer Science (part time), University of Chester, 2025.
+Dissertation built a small REST API in Flask with SQLite.
+
+SKILLS
+Python, Django basics, HTML, CSS, Git, SQLite.

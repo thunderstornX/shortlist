@@ -1,0 +1,26 @@
+Junior Backend Developer
+Northbank Logistics Ltd, Manchester (hybrid, 2 days on site)
+Salary 32,000 to 38,000 GBP
+
+About the role
+We move freight. Our platform books it, tracks it and bills for it. You will join a
+team of six working on the services behind that platform.
+
+Essential requirements
+- At least 2 years of professional experience writing Python.
+- Experience designing and building REST APIs.
+- Working knowledge of relational databases and SQL.
+- Experience with Git and code review in a team setting.
+
+Desirable
+- Experience with Docker or another container runtime.
+- Exposure to a cloud platform (AWS, GCP or Azure).
+- Experience writing automated tests.
+- Any experience with logistics, freight or supply chain systems.
+
+What we offer
+Pension, 25 days holiday, cycle to work scheme. We are an equal opportunities
+employer and welcome applications from all backgrounds.
+
+How to apply
+Send a CV to careers@northbank-logistics.example. No agencies.

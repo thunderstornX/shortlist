@@ -1,0 +1,128 @@
+{
+  "arm": "plain chatbot use",
+  "model": "openai/gpt-oss-20b",
+  "provider": "groq",
+  "candidates": [
+    {
+      "candidate": "B1",
+      "latency_s": 1.81,
+      "tokens": 1432,
+      "quotes_offered": 7,
+      "quotes_grounded": 6,
+      "quotes_ungrounded": 1,
+      "quotes_altered": 0,
+      "quotes_absent": 1,
+      "quotes_too_short_to_check": 0,
+      "altered_examples": [],
+      "absent_examples": [
+        {
+          "quote": "Junior Backend Developer",
+          "best_match": 0.4167
+        }
+      ],
+      "raw_output_chars": 1733
+    },
+    {
+      "candidate": "B2",
+      "latency_s": 1.5,
+      "tokens": 1197,
+      "quotes_offered": 6,
+      "quotes_grounded": 6,
+      "quotes_ungrounded": 0,
+      "quotes_altered": 0,
+      "quotes_absent": 0,
+      "quotes_too_short_to_check": 0,
+      "altered_examples": [],
+      "absent_examples": [],
+      "raw_output_chars": 1374
+    },
+    {
+      "candidate": "B3",
+      "latency_s": 1.65,
+      "tokens": 1247,
+      "quotes_offered": 3,
+      "quotes_grounded": 3,
+      "quotes_ungrounded": 0,
+      "quotes_altered": 0,
+      "quotes_absent": 0,
+      "quotes_too_short_to_check": 0,
+      "altered_examples": [],
+      "absent_examples": [],
+      "raw_output_chars": 1189
+    },
+    {
+      "candidate": "B4",
+      "latency_s": 2.45,
+      "tokens": 1849,
+      "quotes_offered": 11,
+      "quotes_grounded": 2,
+      "quotes_ungrounded": 9,
+      "quotes_altered": 0,
+      "quotes_absent": 9,
+      "quotes_too_short_to_check": 0,
+      "altered_examples": [],
+      "absent_examples": [
+        {
+          "quote": "Backend Engineer, Halton Logistics Software, 2022 to present. *Python and FastAPI*",
+          "best_match": 0.5488
+        },
+        {
+          "quote": "Developer, Tallinn Software OU, Estonia. 2020 to 2022. *Python microservices*",
+          "best_match": 0.7143
+        },
+        {
+          "quote": "Designed the *REST API* for the pallet consolidation engine used by three UK carriers",
+          "best_match": 0.7294
+        }
+      ],
+      "raw_output_chars": 1675
+    },
+    {
+      "candidate": "B5",
+      "latency_s": 1.93,
+      "tokens": 1219,
+      "quotes_offered": 3,
+      "quotes_grounded": 3,
+      "quotes_ungrounded": 0,
+      "quotes_altered": 0,
+      "quotes_absent": 0,
+      "quotes_too_short_to_check": 0,
+      "altered_examples": [],
+      "absent_examples": [],
+      "raw_output_chars": 1220
+    },
+    {
+      "candidate": "B6",
+      "latency_s": 32.07,
+      "tokens": 1456,
+      "quotes_offered": 6,
+      "quotes_grounded": 5,
+      "quotes_ungrounded": 1,
+      "quotes_altered": 0,
+      "quotes_absent": 1,
+      "quotes_too_short_to_check": 0,
+      "altered_examples": [],
+      "absent_examples": [
+        {
+          "quote": "Developer, Bolton Insurance Systems. 2013 to 2016. Relational database work in Oracle",
+          "best_match": 0.6
+        }
+      ],
+      "raw_output_chars": 1816
+    }
+  ],
+  "summary": {
+    "n": 6,
+    "latency_median_s": 1.87,
+    "latency_total_s": 41.4,
+    "tokens_median": 1339,
+    "tokens_total": 8400,
+    "quotes_offered": 36,
+    "quotes_grounded": 25,
+    "quotes_altered": 0,
+    "quotes_absent": 11,
+    "quotes_too_short_to_check": 0,
+    "quotes_ungrounded": 11,
+    "grounding_rate": 0.6944
+  }
+}

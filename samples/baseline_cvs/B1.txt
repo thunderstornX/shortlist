@@ -1,0 +1,17 @@
+FIONA ABERNATHY
+Software Developer | Preston | f.abernathy@example.com
+
+EXPERIENCE
+Developer, Ribble Systems, Preston. 2023 to present.
+Python work on the order management platform. Built and documented the REST
+endpoints for the returns service. Own the PostgreSQL schema for that service and
+wrote its migrations. All work goes through pull request review on GitHub.
+
+Support Analyst, Ribble Systems. 2022 to 2023.
+Triaged customer issues, wrote SQL queries to investigate data problems.
+
+EDUCATION
+BSc Software Engineering, University of Central Lancashire, 2022.
+
+SKILLS
+Python, Flask, PostgreSQL, SQL, Git, GitHub Actions, Linux.

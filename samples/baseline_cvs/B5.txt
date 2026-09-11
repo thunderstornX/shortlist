@@ -1,0 +1,17 @@
+NATALIE OYELARAN
+Full Stack Developer | Liverpool | n.oyelaran@example.com
+
+EXPERIENCE
+Full Stack Developer, Sefton Creative, Liverpool. 2023 to present.
+Mostly front end: React and TypeScript. Some Node.js backend work building REST
+endpoints. I touch Python only for occasional scripts. Git and code review daily
+across a team of four.
+
+Freelance Web Developer. 2021 to 2023.
+WordPress and Shopify builds for small businesses. Some MySQL.
+
+EDUCATION
+BA Digital Media, Liverpool John Moores University, 2021.
+
+SKILLS
+JavaScript, TypeScript, React, Node.js, REST, MySQL, Git, some Python.

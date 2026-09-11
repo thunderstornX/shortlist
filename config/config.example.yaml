@@ -1,0 +1,40 @@
+# Copy to config/config.yaml. Contains NO secrets; API keys live only in .env.
+
+model:
+  # Tried top to bottom. First provider with a key present and a healthy
+  # response wins. If all fail the run aborts with a clear message rather
+  # than silently degrading.
+  providers:
+    # Groq first: the OpenRouter key hit its credit ceiling on 2026-09-11
+    # (HTTP 402, "can only afford 444 tokens"). Order is the whole point of
+    # having a list, so this is a config change, not a code change.
+    - name: groq
+      model: openai/gpt-oss-20b
+    - name: openrouter
+      model: openai/gpt-oss-120b
+  temperature: 0.0          # screening must be reproducible, not creative
+  max_tokens: 3000          # 2000 truncated JSON mid-object on 8 criteria
+  timeout_seconds: 90
+
+reliability:
+  max_retries: 3
+  backoff_seconds: 2.0
+  deadline_seconds: 300     # total wall clock per candidate; socket timeouts
+                            # apply per read, not to total elapsed
+
+screening:
+  # A criterion may only be marked "met" if the model returns a quote that
+  # appears verbatim in the CV. Below this similarity the verdict is
+  # downgraded to "unsupported" and flagged for human review.
+  min_quote_match: 1.0       # 1.0 = exact substring match required
+  max_quote_chars: 300
+  # Verdicts at or below this confidence always go to a human.
+  review_confidence_below: 0.70
+
+privacy:
+  # Candidate PII removed from logs. The CV text itself is never logged.
+  redact_in_logs: ["email", "phone", "address"]
+  log_cv_text: false
+
+output:
+  directory: "out"
