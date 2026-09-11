@@ -37,10 +37,21 @@ class JobSpec(BaseModel):
 
     @field_validator("criteria")
     @classmethod
-    def _has_essential(cls, v: list[Criterion]) -> list[Criterion]:
-        if not any(c.importance == Importance.ESSENTIAL for c in v):
-            raise ValueError("no essential criteria found; a spec with none cannot rank")
+    def _not_empty(cls, v: list[Criterion]) -> list[Criterion]:
+        if not v:
+            raise ValueError("no criteria found in the posting")
         return v
+
+    def has_essential(self) -> bool:
+        """Many real postings never mark anything as required.
+
+        This used to raise during construction, which meant out/criteria.yaml was
+        never written and the user could not do the one thing the README tells
+        them to do: promote the real essentials by hand. Ranking without
+        essentials is meaningless, so it is still refused, but now it is refused
+        at the point of screening, after the file the user needs to edit exists.
+        """
+        return any(c.importance == Importance.ESSENTIAL for c in self.criteria)
 
     def essential(self) -> list[Criterion]:
         return [c for c in self.criteria if c.importance == Importance.ESSENTIAL]

@@ -66,6 +66,10 @@ def cmd_criteria(args) -> int:
 
     ess = len(spec.essential())
     print(f"\n{len(spec.criteria)} criteria found: {ess} essential, {len(spec.criteria)-ess} desirable")
+    if not ess:
+        print("\n  WARNING: this posting marks nothing as required, so nothing can be ranked.")
+        print("  The criteria have still been written. Open the file, change the criteria")
+        print("  that are genuinely required to 'essential', then screen.")
     print(f"  {sheet}   <- read this")
     print(f"  {out/'criteria.yaml'}   <- edit this if anything is wrong")
     print(f"\nWhen the criteria look right:\n  shortlist screen --criteria {out/'criteria.yaml'} --cvs <folder>")
@@ -90,6 +94,11 @@ def cmd_screen(args) -> int:
     log = RunLog(_run_id(), ROOT / "logs", cfg.get("privacy", {}).get("log_cv_text", False))
 
     spec = _load_spec(Path(args.criteria))
+    if not spec.has_essential():
+        print(f"\nError: {args.criteria} has no essential criteria, so candidates cannot be "
+              f"ranked.\nEdit it and mark the genuinely required ones 'essential', then re-run.",
+              file=sys.stderr)
+        return 2
     docs, failures = load_folder(args.cvs)
 
     if failures:

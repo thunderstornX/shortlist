@@ -63,7 +63,7 @@ After changing, re-run the full evaluation: model changes move verdict bands.
 | `No API key found` | `.env` missing or empty | `cp .env.example .env`, add one key |
 | `only N characters of text extracted` | Scanned or image-only CV | OCR it, or get a text version. **Not a rejection.** |
 | `Posting text is only N characters` | Page is JavaScript-rendered | Save the posting as `.txt` and pass that |
-| `no essential criteria found` | Posting marks nothing as required | Edit `out/criteria.yaml` and promote the real essentials |
+| `has no essential criteria, so candidates cannot be ranked` | Posting marks nothing as required. Measured on real postings, this is common | `out/criteria.yaml` **is still written**; open it, mark the genuinely required rows `essential`, re-run |
 | `Every provider failed after retries` | Network, quota, or bad key | Check the `errors` list printed with it; each entry names the provider and the HTTP status |
 | `Wall-clock deadline of Ns exceeded` | A provider stalled | Socket timeouts apply per read, not to total elapsed, so this is a separate ceiling. Raise `reliability.deadline_seconds` or switch provider. |
 | `criterion looks like several requirements` | One criterion bundles two testable things | Split it in `out/criteria.yaml` |
@@ -78,6 +78,7 @@ After changing, re-run the full evaluation: model changes move verdict bands.
 
 ## Known limitations
 
+0. **Free-tier throughput is the binding constraint, not the code.** Groq's free tier allows roughly 7,900 tokens per minute, and a screening costs about 2,000, so sustained throughput is **three to four candidates per minute**. A 40-candidate batch is a 10 to 15 minute job. Firing faster returns HTTP 429, which the client now waits out rather than failing, so batches get slower rather than breaking. Measured 2026-09-11 against real resumes.
 1. **Worst-case latency is far above median.** Measured 25.0s median against 139.6s worst on the 12-case set. Slowest candidates are the longest CVs. There is no streaming or parallelism; 40 candidates is a coffee break, not a second.
 2. **Desirable criteria are more gameable than essential ones.** Observed directly: the keyword-stuffing test case scored 1 of 4 essential but 4 of 4 desirable, because desirables are often bare tool names that a keyword list satisfies. Treat desirable counts as weak signal.
 3. **Grounding proves a sentence exists, not that it is true.** A candidate who writes a false claim gets a verified quote for it. This checks the system against the CV, never the CV against reality.

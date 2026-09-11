@@ -241,6 +241,15 @@ with 11 claims apparently absent**. After it: **94.7% with 2**. I was one step a
 from writing a case study around a number that was **25 points wrong in my own
 favour**.
 
+**F9. The criteria file was not written when a posting marked nothing as required.**
+Validation rejected such a `JobSpec` during construction, so `out/criteria.yaml` never
+existed and the user could not do the one thing the README instructs: promote the real
+essentials by hand. Testing against real job descriptions showed postings that mark
+nothing as required are **common**, not an edge case. **Fix:** the file is written
+regardless, with a warning, and screening refuses separately at the point where
+ranking would be meaningless. Refusing to rank was correct; refusing to produce the
+file the user must edit was not.
+
 **F8. Injection detection flagged a candidate for describing their own speciality.**
 A real security researcher's CV was flagged because it contains the phrase "system
 prompt", which appears there because their published work audits LLM system prompts.
