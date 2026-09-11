@@ -12,6 +12,14 @@ model:
       model: openai/gpt-oss-20b
     - name: openrouter
       model: openai/gpt-oss-120b
+    # Third line of defence, unaffected by the other two providers' limits.
+    # NVIDIA lists 80 models but only 13 are invocable; the rest return 404
+    # "function not found" or 410 end-of-life, so this was picked by probing.
+    # Measured on the real screening task: llama-3.2-11b 15.4s, gpt-oss-20b
+    # 42.4s, nemotron-nano-omni 43.0s, muse-glimmer 77.4s, nemotron-ultra-550b
+    # 89.6s. All returned valid JSON with 8 of 8 assessments.
+    - name: nvidia
+      model: meta/llama-3.2-11b-vision-instruct
   temperature: 0.0          # screening must be reproducible, not creative
   max_tokens: 3000          # 2000 truncated JSON mid-object on 8 criteria
   timeout_seconds: 90

@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[2]
 ENV_VAR_FOR_PROVIDER = {
     "openrouter": "OPENROUTER_API_KEY",
     "groq": "GROQ_API_KEY",
+    "nvidia": "NVIDIA_API_KEY",
 }
 
 

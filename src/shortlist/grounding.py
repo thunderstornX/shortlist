@@ -14,9 +14,15 @@ import re
 from difflib import SequenceMatcher
 
 _WS = re.compile(r"\s+")
+# PDF extraction breaks a hyphenated word across a line and leaves "high- throughput".
+# That is a layout artefact, not a different word, and it is the same class of
+# difference as the whitespace handled below. Found on a real CV where a correctly
+# quoted "High-throughput" failed to match the extracted text at 0.94.
+_SPLIT_HYPHEN = re.compile(r"(\w)-\s+(\w)")
 
 
 def normalise(text: str) -> str:
+    text = _SPLIT_HYPHEN.sub(r"\1-\2", text)
     return _WS.sub(" ", text).strip().lower()
 
 

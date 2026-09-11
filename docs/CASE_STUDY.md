@@ -241,6 +241,15 @@ with 11 claims apparently absent**. After it: **94.7% with 2**. I was one step a
 from writing a case study around a number that was **25 points wrong in my own
 favour**.
 
+**F7. PDF hyphenation broke verbatim matching on a real CV.** Extraction rendered a
+word hyphenated across a line break as `"high- throughput"`, with a space after the
+hyphen. A correctly quoted `"High-throughput"` then failed to match at 0.94, so **the
+model's quote was more faithful than the extracted text it was checked against**.
+Found only by testing on a real document rather than synthetic fixtures. **Fix:**
+`grounding.normalise` now rejoins a hyphen split across whitespace, which is the same
+class of layout artefact as the whitespace already handled. Regression-tested: a
+paraphrase of the same sentence still fails at 0.16 and the guardrail suite stays 8/8.
+
 **F6. "Too short to verify" was reported as "absent from the CV".** The verifier
 rejects fragments under 12 characters as proving nothing. A quote of `"some Python"`
 was counted as fabricated when it was in the CV verbatim. **Fix:** separate counters
@@ -254,7 +263,7 @@ flatters the thing you built is the one to re-check first.
 ## 8. Limitations
 
 1. Grounding proves a sentence **exists in the CV**, never that it is **true**.
-2. Injection detection is pattern-based and will miss rewordings. It only ever raises a flag.
+2. Injection detection is pattern-based, and it **false-positives on candidates from the field it protects against**. Tested on a real security researcher's CV, the phrase "system prompt" triggered a flag because their published work audits LLM system prompts. The attack's vocabulary and the speciality's vocabulary are the same words. It only ever raises a flag for a human.
 3. No fairness or adverse-impact analysis was performed.
 4. One language pair tested.
 5. Synthetic data throughout, and the user was a proxy.

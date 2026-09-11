@@ -21,6 +21,7 @@ from .config import api_key_for
 ENDPOINTS = {
     "openrouter": "https://openrouter.ai/api/v1/chat/completions",
     "groq": "https://api.groq.com/openai/v1/chat/completions",
+    "nvidia": "https://integrate.api.nvidia.com/v1/chat/completions",
 }
 
 

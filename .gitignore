@@ -12,3 +12,6 @@ eval/results/*
 !eval/results/eval-20260908-165453.json
 !eval/results/baseline-plain-llm-20260911-174019.json
 !eval/results/baseline-plain-llm-20260911-174126.json
+
+# Real CVs carry personal data and never enter the repository.
+samples/real_local/
