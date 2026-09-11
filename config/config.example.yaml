@@ -17,9 +17,12 @@ model:
   timeout_seconds: 90
 
 reliability:
-  max_retries: 3
+  max_retries: 5
   backoff_seconds: 2.0
-  deadline_seconds: 300     # total wall clock per candidate; socket timeouts
+  # Minimum pause on HTTP 429. Providers report when the token bucket
+  # next refills, which is sooner than when it holds a full request.
+  rate_limit_floor_seconds: 12.0
+  deadline_seconds: 420     # must exceed a provider's rate-limit reset window     # total wall clock per candidate; socket timeouts
                             # apply per read, not to total elapsed
 
 screening:

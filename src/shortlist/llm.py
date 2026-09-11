@@ -9,6 +9,7 @@ Two deliberate choices:
 from __future__ import annotations
 
 import json
+import re
 import time
 from dataclasses import dataclass, field
 from typing import Any
@@ -25,6 +26,31 @@ ENDPOINTS = {
 
 class AllProvidersFailed(RuntimeError):
     pass
+
+
+class RateLimited(RuntimeError):
+    """Provider asked us to wait. Carries how long, in seconds."""
+
+    def __init__(self, wait_s: float, message: str) -> None:
+        super().__init__(message)
+        self.wait_s = wait_s
+
+
+def _retry_after(resp: "httpx.Response") -> float:
+    """Seconds to wait, read from whichever header the provider sent."""
+    for h in ("retry-after", "x-ratelimit-reset-tokens", "x-ratelimit-reset-requests"):
+        v = resp.headers.get(h)
+        if not v:
+            continue
+        try:
+            return float(v)
+        except ValueError:
+            pass
+        # Groq sends durations like "7.66s" or "2m59.56s".
+        m = re.fullmatch(r"(?:(\d+)m)?([\d.]+)s", v.strip())
+        if m:
+            return int(m.group(1) or 0) * 60 + float(m.group(2))
+    return 20.0
 
 
 @dataclass
@@ -55,6 +81,7 @@ class LLMClient:
         self.max_retries = r.get("max_retries", 3)
         self.backoff = r.get("backoff_seconds", 2.0)
         self.deadline = r.get("deadline_seconds", 300)
+        self.rate_limit_floor = r.get("rate_limit_floor_seconds", 12.0)
 
     def complete_json(self, system: str, user: str) -> tuple[dict[str, Any], Usage]:
         """Return parsed JSON. Retries within a provider, then falls back."""
@@ -81,6 +108,16 @@ class LLMClient:
                     usage.completion_tokens = u.get("completion_tokens", 0)
                     content = body["choices"][0]["message"]["content"]
                     return _parse_json(content), usage
+                except RateLimited as exc:
+                    # The reported reset is when the token bucket next refills, not
+                    # when it holds enough for a whole request. Honouring it
+                    # literally causes a 1s retry that fails again immediately, so
+                    # a floor is applied.
+                    wait = max(exc.wait_s, self.rate_limit_floor)
+                    wait = min(wait, max(0.0, self.deadline - (time.time() - started)))
+                    usage.errors.append(f"{prov['name']}#{attempt}: rate limited, waited {wait:.1f}s"[:200])
+                    if wait > 0 and attempt < self.max_retries:
+                        time.sleep(wait)
                 except Exception as exc:  # noqa: BLE001 - recorded, then retried
                     usage.errors.append(f"{prov['name']}#{attempt}: {type(exc).__name__}: {exc}"[:200])
                     if attempt < self.max_retries:
@@ -110,6 +147,12 @@ class LLMClient:
             json=payload,
             timeout=self.timeout,
         )
+        if resp.status_code == 429:
+            # Rate limits are a wait, not a failure. Providers say how long in a
+            # header; guessing with a fixed backoff either wastes time or hammers
+            # the endpoint. Screening a batch back to back overruns a
+            # tokens-per-minute budget long before it exhausts a quota.
+            raise RateLimited(_retry_after(resp), f"HTTP 429: {resp.text[:120]}")
         if resp.status_code != 200:
             # Never echo the key; the header is not included in the message.
             raise RuntimeError(f"HTTP {resp.status_code}: {resp.text[:180]}")
