@@ -241,6 +241,17 @@ with 11 claims apparently absent**. After it: **94.7% with 2**. I was one step a
 from writing a case study around a number that was **25 points wrong in my own
 favour**.
 
+**F8. Injection detection flagged a candidate for describing their own speciality.**
+A real security researcher's CV was flagged because it contains the phrase "system
+prompt", which appears there because their published work audits LLM system prompts.
+**In this field the attack's vocabulary and the speciality's vocabulary are the same
+words**, so any candidate qualified to defend against prompt injection was more likely
+to be accused of attempting it. **Fix:** every pattern now requires an instruction
+rather than a topic. "reveal your system prompt" flags; "audits LLM system prompts"
+does not. Six regression tests were added to the offline guardrail suite, three
+asserting attacks are caught and three asserting ordinary security vocabulary is not,
+taking it from 8 to 14 checks.
+
 **F7. PDF hyphenation broke verbatim matching on a real CV.** Extraction rendered a
 word hyphenated across a line break as `"high- throughput"`, with a space after the
 hyphen. A correctly quoted `"High-throughput"` then failed to match at 0.94, so **the
@@ -263,7 +274,7 @@ flatters the thing you built is the one to re-check first.
 ## 8. Limitations
 
 1. Grounding proves a sentence **exists in the CV**, never that it is **true**.
-2. Injection detection is pattern-based, and it **false-positives on candidates from the field it protects against**. Tested on a real security researcher's CV, the phrase "system prompt" triggered a flag because their published work audits LLM system prompts. The attack's vocabulary and the speciality's vocabulary are the same words. It only ever raises a flag for a human.
+2. Injection detection is pattern-based and will miss deliberate rewordings. It only ever raises a flag for a human.
 3. No fairness or adverse-impact analysis was performed.
 4. One language pair tested.
 5. Synthetic data throughout, and the user was a proxy.

@@ -66,14 +66,20 @@ def detect_injection(text: str) -> list[str]:
     concern rather than a curiosity. Detection is deliberately conservative and
     only ever raises a flag for a human; it never changes a verdict by itself.
     """
+    # Every pattern must match an INSTRUCTION, never a topic. An earlier version
+    # matched the bare phrase "system prompt", which flagged the CV of a security
+    # researcher whose published work audits LLM system prompts. In this field the
+    # attack's vocabulary and the speciality's vocabulary are the same words, so a
+    # term on its own can never be the trigger; only a term inside a command can.
     patterns = [
         r"ignore\s+(all\s+)?(previous|prior|above)\s+instructions",
         r"disregard\s+(the\s+)?(above|previous|prior)",
         r"you\s+are\s+(now\s+)?(an?\s+)?(ai|assistant|system|recruiter)",
         r"(mark|rate|score)\s+(this\s+)?(candidate|applicant)\s+(as\s+)?(highly|excellent|met|qualified)",
-        r"system\s*prompt",
+        # "reveal your system prompt" is an attack; "audits LLM system prompts" is a job.
+        r"(reveal|print|show|output|repeat|ignore|override|disclose)\s+(your\s+|the\s+|its\s+)?system\s*prompt",
         r"</?(system|instruction)s?>",
-        r"do\s+not\s+(mention|reveal|disclose)\s+this",
+        r"do\s+not\s+(mention|reveal|disclose)\s+(this|the\s+above|these\s+instructions)",
     ]
     found: list[str] = []
     low = text.lower()
