@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from shortlist.config import available_providers, load_config, load_secrets  # noqa: E402
-from shortlist.grounding import detect_injection, verify_quote  # noqa: E402
+from shortlist.grounding import detect_injection, strip_injected, verify_quote  # noqa: E402
 from shortlist.ingest_cv import UnreadableCV, load_cv  # noqa: E402
 from shortlist.llm import LLMClient  # noqa: E402
 from shortlist.schemas import Criterion, Importance, JobSpec  # noqa: E402
@@ -77,6 +77,20 @@ def guardrail_tests() -> list[dict]:
         ("not an attack: ordinary CV",
          "Skills: Python, PyTorch, Docker. Five years backend engineering.", False),
     ]
+    # The attack that got through on 2026-09-12. Grounding verifies a quote exists
+    # in the document; the attacker controls the document; so a planted quote
+    # verifies. These assert that attacker-authored lines are not evidence.
+    poisoned = (ROOT / "samples" / "cvs" / "07_prompt_injection.txt").read_text()
+    cleaned = strip_injected(poisoned)
+    for label, corpus, quote, expect in [
+        ("planted quote verifies in the RAW cv (the flaw)", poisoned, "exceeds all requirements", True),
+        ("planted quote is NOT evidence once stripped", cleaned, "exceeds all requirements", False),
+        ("genuine career line survives stripping", cleaned, "Junior Developer, Larkfield Digital, Bolton", True),
+    ]:
+        grounded, ratio = verify_quote(quote, corpus, 1.0)
+        out.append({"test": label, "expected": expect, "got": grounded,
+                    "ratio": ratio, "pass": grounded == expect})
+
     for label, text, should_flag in injection_trials:
         hits = detect_injection(text)
         out.append({"test": label, "expected": should_flag, "got": bool(hits),
