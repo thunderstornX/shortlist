@@ -16,3 +16,16 @@ eval/results/*
 
 # Real CVs carry personal data and never enter the repository.
 samples/real_local/
+
+# Author-facing material never enters this repository. These files are written for
+# the author to read while presenting, not for anyone reading the project. Blocked
+# by name as well as by living outside the repo root, so copying one in by mistake
+# still does nothing.
+VIDEO_SCRIPT*
+DEMO_SCRIPT*
+MY_BRIEFING*
+RECREATE*
+docs/VIDEO_SCRIPT*
+docs/DEMO_SCRIPT*
+docs/MY_BRIEFING*
+docs/RECREATE*
