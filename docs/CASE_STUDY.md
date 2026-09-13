@@ -219,6 +219,57 @@ because that difference is the entire defence.
 The original result was not wrong; it was model-dependent, and I had written it up as
 though it were a property of the design.
 
+## 6b. Stability: does it give the same answer twice?
+
+Every result above is a single run, which says nothing about repeatability. A
+screening tool that changes its mind between runs cannot be trusted whatever its
+accuracy, so the same six CVs were screened **four times** at temperature 0 and
+compared per (candidate, criterion) pair rather than per candidate, because two runs
+can reach the same total by different routes.
+
+Run with `python3 eval/stability.py --runs 4`. Raw output in
+`eval/results/stability-20260913-132723.json`.
+
+| Measure | Result |
+|---|---|
+| Pairs compared across all 4 runs | 48 |
+| **Identical verdict in every run** | **45 of 48, 93.8%** |
+| Candidates with identical `essential_met` every run | **5 of 6** |
+| Grounding rate | **min 1.00, mean 1.00** |
+| Screenings failed outright | **0 of 24** |
+| Provider fallbacks needed | none, all 24 served by the primary |
+
+### Where the 6.2% sits, and it is not random
+
+All three unstable pairs are **three-one splits**, a single deviation across four
+runs. Two of the three land on the same candidate, B3, who is the one genuinely
+borderline applicant in the set:
+
+| Pair | Verdicts across 4 runs | The ambiguity |
+|---|---|---|
+| B3, C2 "designing and building REST APIs" | met, met, **partial**, met | CV says *"Dissertation built a small REST API in Flask"*. Is a dissertation project experience? |
+| B3, C4 "Git and code review in a team setting" | partial, partial, **not_met**, partial | CV says *"Use Git, though I am usually the only person on the repo"*. Git yes, team review explicitly no. |
+| B6, C5 "Docker or another container runtime" | unsupported x3, **met** x1 | The model offered an ungrounded quote in three runs and the guard downgraded it; in the fourth it found a real one. |
+
+**The instability concentrates where a human reviewer would also hesitate.** B1, B2,
+B4 and B5 are clear cases and never moved. The third pair is not a screening
+disagreement at all: it is the grounding check correctly rejecting an unverifiable
+quote in three runs out of four.
+
+### What this does and does not license
+
+It supports: *"identical verdicts in 94% of comparisons, and every candidate whose
+case is clear-cut was identical every time."*
+
+It does not support: *"this system is deterministic."* It is not. Four runs on six
+candidates is a small sample, and a borderline applicant can move by one criterion.
+**A hiring decision on a borderline candidate should not rest on a single run**, which
+is exactly why those candidates are the ones routed to a human.
+
+The rate-limit backoff was also exercised for real here: 24 consecutive screenings run
+straight through the provider's per-minute token budget, and all 24 completed with
+waits rather than failures.
+
 ## 7. Failure cases and what changed
 
 All six below are from real runs on 2026-09-11, not hypotheticals. Three are in the

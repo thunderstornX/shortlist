@@ -1,0 +1,84 @@
+{
+  "runs": 4,
+  "candidates": 6,
+  "criteria": 8,
+  "pairs_compared": 48,
+  "pairs_identical": 45,
+  "agreement": 0.9375,
+  "essential_met_per_candidate": {
+    "B1": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "B2": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "B3": [
+      1,
+      1,
+      0,
+      1
+    ],
+    "B4": [
+      4,
+      4,
+      4,
+      4
+    ],
+    "B5": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "B6": [
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  "grounding_min": 1.0,
+  "grounding_mean": 1.0,
+  "failed": 0,
+  "providers": {
+    "groq": 24
+  },
+  "unstable": [
+    {
+      "candidate": "B3",
+      "criterion": "C2",
+      "verdicts": [
+        "met",
+        "met",
+        "partial",
+        "met"
+      ]
+    },
+    {
+      "candidate": "B3",
+      "criterion": "C4",
+      "verdicts": [
+        "partial",
+        "partial",
+        "not_met",
+        "partial"
+      ]
+    },
+    {
+      "candidate": "B6",
+      "criterion": "C5",
+      "verdicts": [
+        "unsupported",
+        "unsupported",
+        "unsupported",
+        "met"
+      ]
+    }
+  ]
+}
