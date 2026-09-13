@@ -29,3 +29,9 @@ docs/VIDEO_SCRIPT*
 docs/DEMO_SCRIPT*
 docs/MY_BRIEFING*
 docs/RECREATE*
+
+# Recordings live in GitHub Releases, never in the repo. A 100 MB per-file limit
+# applies to commits and video would bloat history for everyone cloning.
+*.mp4
+*.mkv
+*.webm
